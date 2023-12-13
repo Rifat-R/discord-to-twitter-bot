@@ -8,17 +8,6 @@ class General(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def test(self, ctx:commands.Context):
-        tweet_data = db.TweetData()
-        queue = tweet_data.get_queue()
-        for i in queue:
-            print(i.send_time)
-            print(i.message)
-            print(i.image_locations)
-            print(i.image_urls)
-
-
     @commands.has_role(config.TWEET_ROLE_NAME)
     @commands.command()
     async def tweet(self, ctx:commands.Context, *, message:str=None):
@@ -150,20 +139,6 @@ class General(commands.Cog):
         image_locations = tweet_message.image_locations
         send_twitter_message.send_tweet(message, image_locations)
         tweet_data.remove_from_queue(0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def setup(bot):

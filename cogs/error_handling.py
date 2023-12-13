@@ -1,9 +1,4 @@
-from disnake.ext import commands, tasks
-from settings import database as db, config
-from utils import send_twitter_message, embed_utils
-import traceback
-import disnake
-import datetime
+from disnake.ext import commands
 
 class ErrorHandling(commands.Cog):
 

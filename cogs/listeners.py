@@ -9,6 +9,8 @@ class Listeners(commands.Cog):
         self.bot = bot
         self.check_queue_loop.start()
 
+
+    # This runs when the bot is ready
     @commands.Cog.listener()
     async def on_ready(self):
         print(f"Bot id: {self.bot.user.id}")
